@@ -18,3 +18,4 @@ DerivedData
 screenshot_*.png
 .irb-history
 *.swp
+.swiftpm/
