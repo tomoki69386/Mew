@@ -42,3 +42,16 @@ extension UICollectionView {
 }
 
 #endif
+
+public extension UIStackView {
+    @available(iOS 11.0, *)
+    func setCustomSpacing<Content, Parent>(_ spacing: CGFloat, after container: ContainerView.Container<Content, Parent>) where
+        Content: UIViewController,
+        Content: Instantiatable,
+        Parent: UIViewController,
+        Parent: Instantiatable {
+        
+        guard let view = container.contents.first?.view else { return }
+        setCustomSpacing(spacing, after: view)
+    }
+}
