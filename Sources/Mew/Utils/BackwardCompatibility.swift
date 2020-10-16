@@ -51,7 +51,8 @@ public extension UIStackView {
         Parent: UIViewController,
         Parent: Instantiatable {
         
-        guard let view = container.contents.first?.view else { return }
-        setCustomSpacing(spacing, after: view)
+        container.contents.forEach({content in
+            setCustomSpacing(spacing, after: content.view)
+        })
     }
 }
